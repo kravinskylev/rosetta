@@ -12,10 +12,11 @@ class RosettaCode
    solutions    = document.css('.ruby')
    # format the first solution from text/html into executable ruby
    simple_ruby_solution = solutions.first.text.split("  ").join("\n")
+   puts simple_ruby_solution
    #trying to fix lack of space before final end
-   final_solution = simple_ruby_solution.gsub("end$", " \n end")
+   final_solution = simple_ruby_solution.gsub!(/end$/, " \n end")
    puts final_solution
-   puts eval(final_solution)
+   #puts eval(final_solution)
   end
 end
 
