@@ -18,4 +18,7 @@ open("#{query}.rb", 'a') { |f|
 
 puts "A solution for #{query} has been written to #{query}.rb\n\n"
 puts "Here is the first solution:\n\n #{simple_solutions.first}\n\n"
-
+#TODO to have dictionary so that "JavaScript" is evaluated as "javascript"
+#TODO add message when no solution is found
+#TODO package as gem
+#TODO namespace
