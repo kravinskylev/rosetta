@@ -10,12 +10,12 @@ uri                 = URI("http://rosettacode.org/wiki/" + query)
 body                = Net::HTTP.get(uri)
 document            = Nokogiri::HTML(body)
 solutions           = document.css(".#{lang}")
-simple_solutions     = solutions.map {|solution| solution.text.split("  ").join("\n") }
-#simple_solutions.map { |solution| File.write("#{query}.rb", solution) }
+simple_solutions    = solutions.map {|solution| solution.text.split("  ").join("\n") }
+
 open("#{query}.rb", 'a') { |f|
   simple_solutions.map {|solution| f.puts(solution + "\n\n")}
 }
 
-#File.write("#{query}.rb", simple_solution)
+puts "A solution for #{query} has been written to #{query}.rb\n\n"
+puts "Here is the first solution:\n\n #{simple_solutions.first}\n\n"
 
-puts "A solution for #{query} has been written to #{query}.rb"
