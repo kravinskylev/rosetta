@@ -14,9 +14,11 @@ require 'net/http'
    simple_ruby_solution = solutions.first.text.split("  ").join("\n")
    #puts simple_ruby_solution
    #trying to fix lack of space before final end
-   final_solution = simple_ruby_solution.gsub!(/end$/, " \n end")
-   puts final_solution
-   puts eval(final_solution)
+   final_solution = simple_ruby_solution.gsub!(/end\Z/, " \n end")
+   #puts final_solution
+   #puts eval(final_solution)
+   File.write("#{query}.rb", final_solution)
+
 #  end
 #end
 

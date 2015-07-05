@@ -4,8 +4,6 @@ n.times do
 current_number, last_number = sequence.last(2)
 
 sequence << current_number + (last_number or 0)
-end
-sequence.last
+end 
+sequence.last 
  end
-
-puts fib(10)
