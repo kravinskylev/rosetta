@@ -1,9 +1,9 @@
 require 'nokogiri'
 require 'net/http'
-ARGV[0] = query
+ARGV[0] = $QUERY
 class RosettaCode
-  def self.get_fizzbuzz
-   sanitized_query = query.join(" ")
+  def self.get_solution
+   sanitized_query = $QUERY.join(" ")
    # get HTML from the rosetta
    uri          = URI("http://rosettacode.org/wiki/" + santized_query)
    body         = Net::HTTP.get(uri)
@@ -16,3 +16,5 @@ class RosettaCode
    puts eval(final_solution)
   end
 end
+
+RosettaCode.get_solution
