@@ -1,11 +1,12 @@
 require 'nokogiri'
 require 'net/http'
-ARGV[0] = $QUERY
+
 class RosettaCode
   def self.get_solution
-   sanitized_query = $QUERY.join(" ")
+   @query = ARGV[0]
    # get HTML from the rosetta
-   uri          = URI("http://rosettacode.org/wiki/" + santized_query)
+   uri          = URI("http://rosettacode.org/wiki/" + @query)
+   puts uri
    body         = Net::HTTP.get(uri)
    # parse it and use CSS selectors to find the ruby solution
    document     = Nokogiri::HTML(body)
