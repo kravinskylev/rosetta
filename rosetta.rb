@@ -12,7 +12,7 @@ class RosettaCode
    solutions    = document.css('.ruby')
    # format the first solution from text/html into executable ruby
    simple_ruby_solution = solutions.first.text.split("  ").join("\n")
-   final_solution = simple_ruby_solution.gsub("putsend", "return \n end")
+   final_solution = simple_ruby_solution.gsub("putsend", "puts \n end")
    puts final_solution
    puts eval(final_solution)
   end
