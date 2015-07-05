@@ -1,10 +1,11 @@
 require 'nokogiri'
 require 'net/http'
-
+ARGV[0] = query
 class RosettaCode
   def self.get_fizzbuzz
+   sanitized_query = query.join(" ")
    # get HTML from the rosetta
-   uri          = URI("http://rosettacode.org/wiki/FizzBuzz")
+   uri          = URI("http://rosettacode.org/wiki/" + santized_query)
    body         = Net::HTTP.get(uri)
    # parse it and use CSS selectors to find the ruby solution
    document     = Nokogiri::HTML(body)
