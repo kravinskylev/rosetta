@@ -1,8 +1,8 @@
 require 'nokogiri'
 require 'net/http'
 
-class RosettaCode
-  def self.get_solution
+#class RosettaCode
+#  def self.get_solution
    @query = ARGV[0]
    # get HTML from the rosetta
    uri          = URI("http://rosettacode.org/wiki/" + @query)
@@ -12,12 +12,12 @@ class RosettaCode
    solutions    = document.css('.ruby')
    # format the first solution from text/html into executable ruby
    simple_ruby_solution = solutions.first.text.split("  ").join("\n")
-   puts simple_ruby_solution
+   #puts simple_ruby_solution
    #trying to fix lack of space before final end
    final_solution = simple_ruby_solution.gsub!(/end$/, " \n end")
    puts final_solution
-   #puts eval(final_solution)
-  end
-end
+   puts eval(final_solution)
+#  end
+#end
 
-RosettaCode.get_solution
+#RosettaCode.get_solution
