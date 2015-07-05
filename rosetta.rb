@@ -3,9 +3,9 @@ require 'net/http'
 
 #class RosettaCode
 #  def self.get_solution
-   @query = ARGV[0]
+   query        = ARGV[0]
    # get HTML from the rosetta
-   uri          = URI("http://rosettacode.org/wiki/" + @query)
+   uri          = URI("http://rosettacode.org/wiki/" + query)
    body         = Net::HTTP.get(uri)
    # parse it and use CSS selectors to find the ruby solution
    document     = Nokogiri::HTML(body)
@@ -20,4 +20,4 @@ require 'net/http'
 #  end
 #end
 
-#RosettaCode.get_solution
+# RosettaCode.get_solution

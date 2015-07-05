@@ -1,12 +1,11 @@
-string = "def fib(n, sequence=[1])
+puts eval("def fib(n, sequence=[1])
 n.times do
 
 current_number, last_number = sequence.last(2)
 
 sequence << current_number + (last_number or 0)
 end
-sequence.lastend"
+sequence.last
+ end")
 
-string.gsub!(/end$/, " \n end")
 
-puts string
