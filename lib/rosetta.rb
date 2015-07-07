@@ -19,6 +19,7 @@ module Lazy
         puts "Here is the first solution:\n\n #{simple_solutions.first}\n\n"
       else
         puts "Something is wrong with your query. Here's an example: Lazy::Rosetta.search('Fibonacci_sequence', 'javascript')"
+      end
     end
   end
 end
