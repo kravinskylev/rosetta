@@ -4,8 +4,8 @@ module Lazy
   class Rosetta
     def self.search(query, lang="ruby")
       puts "Your language is #{lang}, and your query is #{query}"
-
-      uri                 = URI("http://rosettacode.org/wiki/" + query)
+      sanitized_query     = query.split(" ").join("_")
+      uri                 = URI("http://rosettacode.org/wiki/" + sanitized_query)
       body                = Net::HTTP.get(uri)
       document            = Nokogiri::HTML(body)
       solutions           = document.css(".#{lang}")
@@ -23,3 +23,4 @@ module Lazy
     end
   end
 end
+Lazy::Rosetta.search('Fibonacci squence', 'javascript')
