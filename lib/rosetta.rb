@@ -14,11 +14,11 @@ module Lazy
       open("#{query}.rb", 'a') { |f|
         simple_solutions.map {|solution| f.puts(solution + "\n\n")}
       }
-
-      puts "A solution for #{query} has been written to #{query}.rb\n\n"
-      puts "Here is the first solution:\n\n #{simple_solutions.first}\n\n"
+      unless simple_solutions.empty?
+        puts "A solution for #{query} has been written to #{query}.rb\n\n"
+        puts "Here is the first solution:\n\n #{simple_solutions.first}\n\n"
+      else
+        puts "Something is wrong with your query. Here's an example: Lazy::Rosetta.search('Fibonacci_sequence', 'javascript')"
     end
   end
 end
-
-#example useage: Lazy::Rosetta.search("Fibonacci_sequence", "javascript")
