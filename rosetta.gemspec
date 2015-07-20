@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 \n\n
   useage: `Lazy::Rosetta.search(query, language)`. Language defaults to Ruby if not otherwise specified. Example queries include 'FizzBuzz' and 'Fibonacci_sequence'.
 \n\n
-  See the blog post on this at http://lev.io and the repo at http://github.com/kravinskylev/rosetta for more details
+  See the blog post on this at http://lev.io and the repo at http://github.com/levthedev/rosetta for more details
 \n\n
   note: this isn't actually for cheating, please don't do that. it's an expirement in web scraping."
   s.authors                    = ["Lev Kravinsky"]
