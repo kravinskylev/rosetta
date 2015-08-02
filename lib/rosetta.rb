@@ -23,5 +23,3 @@ module Lazy
     end
   end
 end
-
-#Example: Lazy::Rosetta.search('Fibonacci sequence', 'javascript')
